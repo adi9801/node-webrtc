@@ -24,10 +24,24 @@ var rtcPeerConnection;
 
 var userStream;
 
+// var iceServers = {
+//   iceServers: [
+//     { urls: "stun:stun.services.mozilla.com" },
+//     { urls: "stun:stun1.l.google.com:19302" },
+//   ],
+// };
+
 var iceServers = {
   iceServers: [
-    { urls: "stun:stun.services.mozilla.com" },
-    { urls: "stun:stun1.l.google.com:19302" },
+    { urls: "stun:stun.cruxlearning.africa:3478" },
+    {
+      urls: [
+        "turn:turn.cruxlearning.africa:3478?transport=tcp",
+        "turn:turn.cruxlearning.africa:3478?transport=udp",
+      ],
+      username: "guest",
+      credential: "somepassword",
+    },
   ],
 };
 
